@@ -1,39 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Product;
-use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
-class HomeController extends controller {
-
-    public function home(){
-        $products = Product::inRandomOrder()->take(8)->get();
-      
-        return view('home', [
-            'products' => $products
-        ]);
-    }
-
-    public function contact(){
-        return view('contact');
-    }
-
-  
-
-    public function cart(){
-        return view('cart');
-    }
+class HomeController extends Controller
+{
     
-    public function checkout(){
-        return view('checkout');
-    }
 
-    public function success(){
-        return view('success');
-    }
-
-    public function orders(){
-        return view('orders');
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function home()
+    {
+        $products = Product::all();
+        return view('home',[
+            'products'=> $products
+        ]);
     }
 }

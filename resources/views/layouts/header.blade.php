@@ -17,45 +17,57 @@
 						<ul class="nav navbar-nav menu_nav mr-auto  ml-5">
 							<li class="nav-item">
 								<a class="nav-link" href="{{route('home') }}">
+									<i class= "fas fa-home"></i>
 								Home
-							</a>
-						</li>
-
+								</a>
+						    </li>
 							<li class="nav-item submenu dropdown">
 								<a href="{{route('shop.index') }}" class="nav-link">
+								<i class= "fas fa-shopping-bag"></i>
 								 Shop
 								</a>	
 							</li>
 							
-							<li class="nav-item active"><a class="nav-link" href=" {{ route('contact') }}">
+							<li class="nav-item active">
+							 <a  href="{{route('contact') }}" class="nav-link">
+							  <i class= "fas fa-envelope"></i>
 								Contact
-							</a>
-						</li>
+							 </a>
+						    </li>
 						</ul>
-
+						
 						<ul class="nav navbar-nav menu_nav ml-auto">
+						    @guest
 							<li class="nav-item">
-								<a class="nav-link" href="index.html">
+								<a class="nav-link" href="{{route('register') }}">
+								<i class= "fas fa-user-plus"></i>
 								Sign up
-							</a>
-						</li>
+							   </a>
+						   </li>
 
 							<li class="nav-item submenu dropdown">
-								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-								 aria-expanded="false">
+								<a href="{{route('login') }}" class="nav-link">
+								 <i class= "fas fa-sign-in-alt"></i>
 								 Login
 								</a>	
 							</li>
-							
-							<li class="nav-item active"><a class="nav-link" href="{{route('orders') }}">
-								Orders
+							@else
+							<li class="nav-item active">
+							<a  href="{{route('orders') }}" class="nav-link">
+							<i class= "fas fa-truck"></i>
+								orders
 							    </a>
 							</li>
-							<li class="nav-item active"><a class="nav-link" href="contact.html">
+							<li class="nav-item active">
+							  <a class="nav-link" href="{{route('logout') }}">
+							     <i class= "fas fa-sign-out-alt"></i>
 								Logout
-							    </a>
+							  </a>
 							</li>
-							<li class="nav-item active"><a class="nav-link" href="{{route('cart.index') }}">
+							@endguest
+							<li class="nav-item active">
+							<a class="nav-link" href="{{route('cart.index') }}">
+							<i class= "fas fa-shopping-cart"></i>
 								cart
 							    </a>
 						    </li>
