@@ -20,4 +20,8 @@ class HomeController extends Controller
             'products'=> $products
         ]);
     }
+
+    public function cart(){
+        return view('cart');
+    }
 }
